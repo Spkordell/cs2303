@@ -1,0 +1,165 @@
+\section{ctest.c File Reference}
+\label{ctest_8c}\index{ctest.c@{ctest.c}}
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include \char`\"{}mystring.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct \bf{Employee}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \bf{EMPLOYEE\_\-STRUCT\_\-STRING\_\-SIZE}~100
+\item 
+\#define \bf{RAND\_\-EMPLOYEE\_\-COUNT}~4
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\bf{Employee} $\ast$ \bf{make\_\-employee} (char $\ast$name, int birth\_\-year, int start\_\-year)
+\item 
+void \bf{print\_\-employee} (struct \bf{Employee} $\ast$a)
+\item 
+\bf{Employee} $\ast$ \bf{random\_\-employee} ()
+\item 
+\bf{Employee} $\ast$$\ast$ \bf{random\_\-employees} (int count)
+\item 
+void \bf{print\-All\-Employees} (struct \bf{Employee} $\ast$$\ast$e\-Array, int num\_\-elts)
+\item 
+\bf{Employee} $\ast$$\ast$ \bf{shallow\-Copy\-Employees} (struct \bf{Employee} $\ast$$\ast$src, int n)
+\item 
+void \bf{free\-All\-Emplyees} (struct \bf{Employee} $\ast$$\ast$src, int n)
+\item 
+\bf{Employee} $\ast$$\ast$ \bf{deep\-Copy\-Employees} (struct \bf{Employee} $\ast$$\ast$src, int n)
+\item 
+int \bf{main} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+const int \bf{MAX\_\-CHARS} = 20
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{ctest.c@{ctest.c}!EMPLOYEE_STRUCT_STRING_SIZE@{EMPLOYEE\_\-STRUCT\_\-STRING\_\-SIZE}}
+\index{EMPLOYEE_STRUCT_STRING_SIZE@{EMPLOYEE\_\-STRUCT\_\-STRING\_\-SIZE}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EMPLOYEE\_\-STRUCT\_\-STRING\_\-SIZE~100}\label{ctest_8c_60b1f80e7372bada08baf59cda025b30}
+
+
+\index{ctest.c@{ctest.c}!RAND_EMPLOYEE_COUNT@{RAND\_\-EMPLOYEE\_\-COUNT}}
+\index{RAND_EMPLOYEE_COUNT@{RAND\_\-EMPLOYEE\_\-COUNT}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RAND\_\-EMPLOYEE\_\-COUNT~4}\label{ctest_8c_29411ece8cc257f918d7572bd54fcfee}
+
+
+
+
+\subsection{Function Documentation}
+\index{ctest.c@{ctest.c}!deepCopyEmployees@{deepCopyEmployees}}
+\index{deepCopyEmployees@{deepCopyEmployees}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct \bf{Employee} $\ast$$\ast$ deep\-Copy\-Employees (struct \bf{Employee} $\ast$$\ast$ {\em src}, int {\em n})}\label{ctest_8c_a968a2e7e2aaa69795fc201720187bdf}
+
+
+Duplicates all the structs in an array of pointers to Emplyee structs, and creates an array of pointers to these new stucts \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em src}]Array to deep copy \item[{\em n}]Number of elements in array  the duplicated array \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{ctest.c@{ctest.c}!freeAllEmplyees@{freeAllEmplyees}}
+\index{freeAllEmplyees@{freeAllEmplyees}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void free\-All\-Emplyees (struct \bf{Employee} $\ast$$\ast$ {\em src}, int {\em n})}\label{ctest_8c_c8d1659493037ec0e964878ade3f3060}
+
+
+Takes an array of pointers to \doxyref{Employee}{p.}{structEmployee} structures and frees all the stucts pointed to \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em src}]The array of pointers of structs to free \item[{\em n}]Number of pointers to structs in the array \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{ctest.c@{ctest.c}!main@{main}}
+\index{main@{main}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int main ()}\label{ctest_8c_446c6b9a1a4dbab517fbb760870458a3}
+
+
+\index{ctest.c@{ctest.c}!make_employee@{make\_\-employee}}
+\index{make_employee@{make\_\-employee}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct \bf{Employee} $\ast$ make\_\-employee (char $\ast$ {\em name}, int {\em birth\_\-year}, int {\em start\_\-year})}\label{ctest_8c_6f0c99a1fa67269822e3322e1849f539}
+
+
+Allocates an \doxyref{Employee}{p.}{structEmployee} struct and fills its fields \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]Employee's name (max 99 characters) \item[{\em birth\_\-year}]Employee's birth year \item[{\em start\_\-year}]Employee's starting year \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pointer to the new struct \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{ctest.c@{ctest.c}!print_employee@{print\_\-employee}}
+\index{print_employee@{print\_\-employee}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void print\_\-employee (struct \bf{Employee} $\ast$ {\em a})}\label{ctest_8c_faeac123368133e72d303383f219af14}
+
+
+Prints an \doxyref{Employee}{p.}{structEmployee} struct \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a}]Pointer to an Emplyee Structure \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{ctest.c@{ctest.c}!printAllEmployees@{printAllEmployees}}
+\index{printAllEmployees@{printAllEmployees}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void print\-All\-Employees (struct \bf{Employee} $\ast$$\ast$ {\em e\-Array}, int {\em num\_\-elts})}\label{ctest_8c_3078506d9229ffd6188645927ca3cb92}
+
+
+Prints all the emplyee structures referenced by an array of pointers to those structures param e\-Array Array of pointers to structs num\_\-elts Number of Elements in the array \begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{ctest.c@{ctest.c}!random_employee@{random\_\-employee}}
+\index{random_employee@{random\_\-employee}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct \bf{Employee} $\ast$ random\_\-employee ()}\label{ctest_8c_76ccf2d749d236163e8461008164d9f8}
+
+
+makes a random employee struct \begin{Desc}
+\item[Returns:]An \doxyref{Employee}{p.}{structEmployee} Struct with randomized fields \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{ctest.c@{ctest.c}!random_employees@{random\_\-employees}}
+\index{random_employees@{random\_\-employees}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct \bf{Employee} $\ast$$\ast$ random\_\-employees (int {\em count})}\label{ctest_8c_426bc25db73e3a4b9a2e7504aff8c1f4}
+
+
+Creates an array of pointers to randomized employee structs \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em count}]Number of random structs to put in the array \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]An array of randomized structs \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{ctest.c@{ctest.c}!shallowCopyEmployees@{shallowCopyEmployees}}
+\index{shallowCopyEmployees@{shallowCopyEmployees}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct \bf{Employee} $\ast$$\ast$ shallow\-Copy\-Employees (struct \bf{Employee} $\ast$$\ast$ {\em src}, int {\em n})}\label{ctest_8c_24c7139abc7cfc4255534919cd70719b}
+
+
+Duplicates an array of pointers to Emplyee structs, creates a \char`\"{}shallow copy\char`\"{} \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em src}]Array to shallow copy \item[{\em n}]Number of elements in array  the duplicated array \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+
+
+\subsection{Variable Documentation}
+\index{ctest.c@{ctest.c}!MAX_CHARS@{MAX\_\-CHARS}}
+\index{MAX_CHARS@{MAX\_\-CHARS}!ctest.c@{ctest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const int \bf{MAX\_\-CHARS} = 20}\label{ctest_8c_3067a325adb4740b1cc6a31498876e8e}
+
+

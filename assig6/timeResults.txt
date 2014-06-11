@@ -1,0 +1,71 @@
+Time to copy ls to ls2
+Size: 91272
+
+Formatted:
+real: 0.159s
+user 0.036s
+sys: 0.008s
+
+Binary:
+real: 0.528s
+user: 0.072s
+sys: 0.367s
+
+Binary with 1024 byte buffer
+real: 0.008s
+user: 0.000s
+sys: 0.000s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Time to copy sl to sl2
+Size: 14304
+
+Formatted:
+real: 0.055s
+user 0.000s
+sys: 0.004s
+
+Binary:
+real: 0.078s
+user: 0.000s
+sys: 0.068s
+
+Binary with 1024 byte buffer
+real: 0.006s
+user: 0.000s
+sys: 0.000s
+
+
+

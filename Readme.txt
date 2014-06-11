@@ -1,0 +1,1 @@
+This directory contains all the homework assigments from systems. See the readme file in each assigment directory for further information.

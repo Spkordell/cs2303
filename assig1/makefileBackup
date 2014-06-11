@@ -1,0 +1,6 @@
+all: assig1
+
+assig1: assig1.o
+	gcc assig1.o -o assig1
+assig1.o: assig1.c /usr/include/stdio.h
+	gcc -c assig1.c

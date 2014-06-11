@@ -1,0 +1,212 @@
+\section{employeef.h File Reference}
+\label{employeef_8h}\index{employeef.h@{employeef.h}}
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct \bf{\_\-Employee}
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef \bf{\_\-Employee} \bf{Employee}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \bf{print\-Employee} (\bf{Employee} $\ast$employee)
+\item 
+void \bf{output\-Employee} (FILE $\ast$stream, \bf{Employee} $\ast$employee)
+\item 
+\bf{Employee} $\ast$ \bf{create\-Employee} (const char $\ast$name, int salary, const char $\ast$department)
+\item 
+\bf{Employee} $\ast$ \bf{scan\-Employee} ()
+\item 
+\bf{Employee} $\ast$$\ast$ \bf{scan\-Employee\-Array} (int count)
+\item 
+void \bf{print\-Employee\-Array} (\bf{Employee} $\ast$$\ast$employee\-Ptr\-Array, int count)
+\item 
+void \bf{output\-Employee\-Array} (FILE $\ast$stream, \bf{Employee} $\ast$$\ast$employee\-Ptr\-Array, int count)
+\item 
+void \bf{free\-Employee\-Array} (\bf{Employee} $\ast$$\ast$employee\-Ptr\-Array, int count)
+\item 
+\bf{Employee} $\ast$ \bf{read\-Employee\-From\-Fi} (FILE $\ast$stream)
+\item 
+\bf{Employee} $\ast$$\ast$ \bf{read\-All\-Employees\-From\-File} (FILE $\ast$stream, int $\ast$count)
+\item 
+void \bf{output\-Binary\-Employee} (int fd, \bf{Employee} $\ast$employee)
+\item 
+void \bf{output\-Binary\-Employee\-Array} (int fd, \bf{Employee} $\ast$$\ast$employee\-Ptr\-Array, int count)
+\item 
+\bf{Employee} $\ast$ \bf{read\-Employee\-From\-Binary\-File} (int fd)
+\item 
+\bf{Employee} $\ast$$\ast$ \bf{read\-All\-Employees\-From\-Binary\-File} (int fd, int $\ast$count)
+\end{CompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{employeef.h@{employeef.h}!Employee@{Employee}}
+\index{Employee@{Employee}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct \bf{\_\-Employee} \bf{Employee}}\label{employeef_8h_1564d0f1c02c3b00afc832a9fd8ddb53}
+
+
+
+
+\subsection{Function Documentation}
+\index{employeef.h@{employeef.h}!createEmployee@{createEmployee}}
+\index{createEmployee@{createEmployee}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Employee}$\ast$ create\-Employee (const char $\ast$ {\em name}, int {\em salary}, const char $\ast$ {\em department})}\label{employeef_8h_cfb476b211f5a9ecf37e52ae97b1e0be}
+
+
+Dynamically allocates an Employee struct with the provided fields \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em name}]Character string of the name of the Employee - will be duplicated \item[{\em salary}]The salary of the Employee \item[{\em department}]Character string of the department of the employee - will be duplicated \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pointer to the newly allocated employee struct \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{employeef.h@{employeef.h}!freeEmployeeArray@{freeEmployeeArray}}
+\index{freeEmployeeArray@{freeEmployeeArray}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void free\-Employee\-Array (\bf{Employee} $\ast$$\ast$ {\em employee\-Ptr\-Array}, int {\em count})}\label{employeef_8h_8a5aa9726b277df85bf9f7abe2ba1f87}
+
+
+Frees all the memory allocated by the structures referenced in the provided array. Also frees memory allocated by the structure fields and by the array of pointers. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em employee\-Ptr\-Array}]Array of pointers to Employee Structs to 'deep' free \item[{\em count}]Number of elements in the array \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{employeef.h@{employeef.h}!outputBinaryEmployee@{outputBinaryEmployee}}
+\index{outputBinaryEmployee@{outputBinaryEmployee}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void output\-Binary\-Employee (int {\em fd}, \bf{Employee} $\ast$ {\em employee})}\label{employeef_8h_25cbcfd9c163ee12b69d989599c8f419}
+
+
+Write an employee struct to an already open binary file \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fd}]The file descriptor of the open file to write to \item[{\em employee}]Pointer to the Employee struct to print \end{description}
+\end{Desc}
+\index{employeef.h@{employeef.h}!outputBinaryEmployeeArray@{outputBinaryEmployeeArray}}
+\index{outputBinaryEmployeeArray@{outputBinaryEmployeeArray}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void output\-Binary\-Employee\-Array (int {\em fd}, \bf{Employee} $\ast$$\ast$ {\em employee\-Ptr\-Array}, int {\em count})}\label{employeef_8h_2226d8df976edffea159ac02ed4b1485}
+
+
+Outputs all the Employee structures defined in an array of pointers of structures to the specified binary file \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fd}]The open file descriptor to write to \item[{\em employee\-Ptr\-Array}]The array of pointers to structs to dereference and print \item[{\em count}]Number of elements in the array \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{employeef.h@{employeef.h}!outputEmployee@{outputEmployee}}
+\index{outputEmployee@{outputEmployee}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void output\-Employee (FILE $\ast$ {\em stream}, \bf{Employee} $\ast$ {\em employee})}\label{employeef_8h_fe0dfee3a22cda6855e076582ce67058}
+
+
+Prints an employee struct to an already open file stream \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em stream}]Pointer to the FILE struct of the open stream to print to \item[{\em employee}]Pointer to the Employee struct to print \end{description}
+\end{Desc}
+\index{employeef.h@{employeef.h}!outputEmployeeArray@{outputEmployeeArray}}
+\index{outputEmployeeArray@{outputEmployeeArray}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void output\-Employee\-Array (FILE $\ast$ {\em stream}, \bf{Employee} $\ast$$\ast$ {\em employee\-Ptr\-Array}, int {\em count})}\label{employeef_8h_63d15476d6b50d78ee285183938d091b}
+
+
+Outputs all the Employee structures defined in an array of pointers of structures to the specified file stream \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em stream}]The open stream to output to \item[{\em employee\-Ptr\-Array}]The array of pointers to structs to dereference and print \item[{\em count}]Number of elements in the array \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{employeef.h@{employeef.h}!printEmployee@{printEmployee}}
+\index{printEmployee@{printEmployee}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void print\-Employee (\bf{Employee} $\ast$ {\em employee})}\label{employeef_8h_291560c311b426d2ea7f359bfc45ed5f}
+
+
+Prints an employee struct to the terminal (standard output). \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em employee}]Pointer to the Employee struct to print \end{description}
+\end{Desc}
+\index{employeef.h@{employeef.h}!printEmployeeArray@{printEmployeeArray}}
+\index{printEmployeeArray@{printEmployeeArray}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void print\-Employee\-Array (\bf{Employee} $\ast$$\ast$ {\em employee\-Ptr\-Array}, int {\em count})}\label{employeef_8h_3caa62038d3de5aaf99f615cd4c5b6e7}
+
+
+Prints all the Employee structures defined in an array of pointers to structures \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em employee\-Ptr\-Array}]The array of pointers to structs to dereference and print \item[{\em count}]Number of elements in the array \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{employeef.h@{employeef.h}!readAllEmployeesFromBinaryFile@{readAllEmployeesFromBinaryFile}}
+\index{readAllEmployeesFromBinaryFile@{readAllEmployeesFromBinaryFile}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Employee}$\ast$$\ast$ read\-All\-Employees\-From\-Binary\-File (int {\em fd}, int $\ast$ {\em count})}\label{employeef_8h_446e8ed3f3661f1856fca912048832b4}
+
+
+\index{employeef.h@{employeef.h}!readAllEmployeesFromFile@{readAllEmployeesFromFile}}
+\index{readAllEmployeesFromFile@{readAllEmployeesFromFile}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Employee}$\ast$$\ast$ read\-All\-Employees\-From\-File (FILE $\ast$ {\em stream}, int $\ast$ {\em count})}\label{employeef_8h_06cf2848ec681a5759cdc372d1dbc46c}
+
+
+Reads all the Employees from an open File and builds an array pointing to them \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em stream}]An open FILE Stream \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the array of pointers to Employees \end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em count}]Will be filled with the total number of employees read from the file \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{employeef.h@{employeef.h}!readEmployeeFromBinaryFile@{readEmployeeFromBinaryFile}}
+\index{readEmployeeFromBinaryFile@{readEmployeeFromBinaryFile}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Employee}$\ast$ read\-Employee\-From\-Binary\-File (int {\em fd})}\label{employeef_8h_9b60b71d275839e4b93dd6a1827b9e31}
+
+
+Reads an Employee from an open binary file and returns a pointer to that employee structure \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em fd}]The open file descriptor to read from \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the new Employee stuct \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{employeef.h@{employeef.h}!readEmployeeFromFi@{readEmployeeFromFi}}
+\index{readEmployeeFromFi@{readEmployeeFromFi}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Employee}$\ast$ read\-Employee\-From\-Fi (FILE $\ast$ {\em stream})}\label{employeef_8h_82d94d206e277a7c67ff90d37dc7795f}
+
+
+\index{employeef.h@{employeef.h}!scanEmployee@{scanEmployee}}
+\index{scanEmployee@{scanEmployee}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Employee}$\ast$ scan\-Employee ()}\label{employeef_8h_9dfe01c30ede04a179b17ad2badca262}
+
+
+Prompts the user to enter the fields for a new employee struct. It then creates allocates the struct and returns a pointer to its location \begin{Desc}
+\item[Returns:]Pointer to a new user generated employee struct \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{employeef.h@{employeef.h}!scanEmployeeArray@{scanEmployeeArray}}
+\index{scanEmployeeArray@{scanEmployeeArray}!employeef.h@{employeef.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Employee}$\ast$$\ast$ scan\-Employee\-Array (int {\em count})}\label{employeef_8h_97f7039a15deadb100a9cfaf38ef9a39}
+
+
+Promts the user for the number of Employees they would like to create. Then prompts the users for that many employees, creates the employees, and fills an array with pointers to these structures. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em count}]Number of Employees to promt for \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the array of pointers to Employees \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}

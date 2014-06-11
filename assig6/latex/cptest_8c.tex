@@ -1,0 +1,117 @@
+\section{cptest.c File Reference}
+\label{cptest_8c}\index{cptest.c@{cptest.c}}
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$fcntl.h$>$}\par
+{\tt \#include $<$sys/types.h$>$}\par
+{\tt \#include $<$sys/stat.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$sys/time.h$>$}\par
+{\tt \#include $<$dirent.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$libgen.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \bf{copyfile1} (char $\ast$infilename, char $\ast$outfilename)
+\item 
+int \bf{copyfile2} (char $\ast$infilename, char $\ast$outfilename)
+\item 
+int \bf{copyfile3} (char $\ast$infilename, char $\ast$outfilename, int buffer\-Size)
+\item 
+timeval $\ast$ \bf{time\-Difference} (struct timeval $\ast$start\-Time, struct timeval $\ast$finish\-Time)
+\item 
+void \bf{usage} (char $\ast$program\_\-name)
+\item 
+void \bf{open\_\-file\_\-error} (char $\ast$filename)
+\item 
+int \bf{main} (int argc, char $\ast$argv[$\,$])
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{cptest.c@{cptest.c}!copyfile1@{copyfile1}}
+\index{copyfile1@{copyfile1}!cptest.c@{cptest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int copyfile1 (char $\ast$ {\em infilename}, char $\ast$ {\em outfilename})}\label{cptest_8c_97d29821b578fd3c9ea2482e77bebfc5}
+
+
+Copies one file to another using formatted I/O, one character at a time. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em infilename}]Name of input file \item[{\em outfilename}]Name of output file \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if successful, 1 if error. \end{Desc}
+\index{cptest.c@{cptest.c}!copyfile2@{copyfile2}}
+\index{copyfile2@{copyfile2}!cptest.c@{cptest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int copyfile2 (char $\ast$ {\em infilename}, char $\ast$ {\em outfilename})}\label{cptest_8c_88b74a1f2a04a2c3e85579164ce6f232}
+
+
+Copies one file to another using raw unformatted I/O, one byte at a time. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em infilename}]Name of input file \item[{\em outfilename}]Name of output file \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if successful, 1 if error. \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{cptest.c@{cptest.c}!copyfile3@{copyfile3}}
+\index{copyfile3@{copyfile3}!cptest.c@{cptest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int copyfile3 (char $\ast$ {\em infilename}, char $\ast$ {\em outfilename}, int {\em buffer\-Size})}\label{cptest_8c_dbd02f3bb54fb307240b8194673d1722}
+
+
+Copies one file to another using raw unformatted I/O, one byte at a time. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em infilename}]Name of input file \item[{\em outfilename}]Name of output file \item[{\em buffer\-Size}]Size of the copy buffer \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if successful, 1 if error. \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{cptest.c@{cptest.c}!main@{main}}
+\index{main@{main}!cptest.c@{cptest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int main (int {\em argc}, char $\ast$ {\em argv}[$\,$])}\label{cptest_8c_28052c36c3b61c6c0eaa18f5d226118f}
+
+
+Main program: copies a file. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em argc}]Number of command-line arguments (including program name). \item[{\em argv}]Array of pointers to character arays holding arguments. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if successful, 1 if fail. \end{Desc}
+\index{cptest.c@{cptest.c}!open_file_error@{open\_\-file\_\-error}}
+\index{open_file_error@{open\_\-file\_\-error}!cptest.c@{cptest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void open\_\-file\_\-error (char $\ast$ {\em filename})}\label{cptest_8c_24e89f857b6c4f8cfadd8bf854978b28}
+
+
+Prints file opening error message \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em filename}]the name of the file that could not be opened \end{description}
+\end{Desc}
+\index{cptest.c@{cptest.c}!timeDifference@{timeDifference}}
+\index{timeDifference@{timeDifference}!cptest.c@{cptest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct timeval $\ast$ time\-Difference (struct timeval $\ast$ {\em start\-Time}, struct timeval $\ast$ {\em finish\-Time})}\label{cptest_8c_af14519feda0f9ad7678c459407b7db6}
+
+
+Calculates the difference between two timestamps and returns a new timestamp with the result. start\-Time must be less than finish\-Time \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em start\-Time}]The ealier time \item[{\em finish\-Time}]The later time \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to a newly allocated timeval struct containing the difference between the two timestamps \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{cptest.c@{cptest.c}!usage@{usage}}
+\index{usage@{usage}!cptest.c@{cptest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void usage (char $\ast$ {\em program\_\-name})}\label{cptest_8c_be689503cb8eba508fa6380f8d476088}
+
+
+Prints usage instructions. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em program\_\-name}]the name of this program \end{description}
+\end{Desc}

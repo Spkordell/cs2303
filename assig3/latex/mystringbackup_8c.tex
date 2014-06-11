@@ -1,0 +1,129 @@
+\section{mystringbackup.c File Reference}
+\label{mystringbackup_8c}\index{mystringbackup.c@{mystringbackup.c}}
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include \char`\"{}mystring.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+char $\ast$ \bf{mystrdup} (const char $\ast$src)
+\item 
+size\_\-t \bf{mystrlen} (const char $\ast$s)
+\item 
+char $\ast$ \bf{mystrcpy} (char $\ast$dest, const char $\ast$src)
+\item 
+char $\ast$ \bf{mystrcat} (char $\ast$dest, const char $\ast$src)
+\item 
+char $\ast$ \bf{mystrncat} (char $\ast$dest, const char $\ast$src, size\_\-t n)
+\item 
+char $\ast$ \bf{mystrncpy} (char $\ast$dest, const char $\ast$src, size\_\-t n)
+\item 
+char $\ast$ \bf{mystrndup} (const char $\ast$s, size\_\-t n)
+\item 
+int \bf{gen\-Rand\-Int} (int max\-Value)
+\item 
+char $\ast$ \bf{gen\-Rand\-String} (int n)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{mystringbackup.c@{mystringbackup.c}!genRandInt@{genRandInt}}
+\index{genRandInt@{genRandInt}!mystringbackup.c@{mystringbackup.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int gen\-Rand\-Int (int {\em max\-Value})}\label{mystringbackup_8c_c4418fa1a8e694adecb1016209595ae1}
+
+
+Generates a random in between 0 and max\-Value, inclusive \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em max\-Value}]The maximum value output \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A random integer between 0 and max\-Value, inclusive \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{mystringbackup.c@{mystringbackup.c}!genRandString@{genRandString}}
+\index{genRandString@{genRandString}!mystringbackup.c@{mystringbackup.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ gen\-Rand\-String (int {\em n})}\label{mystringbackup_8c_6d35dbb5801b4a0118ee8fca9413285a}
+
+
+Fills a string of specified size with random alphabetic characters \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em n}]The size to make the string, actul size will be n+1, accounting for the terminator \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pointer to the new string or zero if no memory available \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{mystringbackup.c@{mystringbackup.c}!mystrcat@{mystrcat}}
+\index{mystrcat@{mystrcat}!mystringbackup.c@{mystringbackup.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mystrcat (char $\ast$ {\em dest}, const char $\ast$ {\em src})}\label{mystringbackup_8c_2cb0b44ce485a993e756027da5de81f5}
+
+
+Appends string src to the dest sting overwriting the  character at the end of dest, and then add a termination  character. Destination string must have enough space for result  $\ast$dest String to append to  $\ast$src String to append onto dest (will not be modified) \begin{Desc}
+\item[Returns:]Poointer to the destination string \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{mystringbackup.c@{mystringbackup.c}!mystrcpy@{mystrcpy}}
+\index{mystrcpy@{mystrcpy}!mystringbackup.c@{mystringbackup.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mystrcpy (char $\ast$ {\em dest}, const char $\ast$ {\em src})}\label{mystringbackup_8c_904b16ff21c3142202e139a3ac79e19a}
+
+
+Copies the src string into the dest string (including the '' termination characto). The destination string must be large enough for the source string  dest The string to copy the string too  src The string to copy \begin{Desc}
+\item[Returns:]A pointer to the desitnation string \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{mystringbackup.c@{mystringbackup.c}!mystrdup@{mystrdup}}
+\index{mystrdup@{mystrdup}!mystringbackup.c@{mystringbackup.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mystrdup (const char $\ast$ {\em src})}\label{mystringbackup_8c_e4d69f24eeedc25d4a7abe09f6656cc2}
+
+
+Allocates memory for a string and copies the src string into it  src Source String \begin{Desc}
+\item[Returns:]pointer to a new string \end{Desc}
+\index{mystringbackup.c@{mystringbackup.c}!mystrlen@{mystrlen}}
+\index{mystrlen@{mystrlen}!mystringbackup.c@{mystringbackup.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}size\_\-t mystrlen (const char $\ast$ {\em s})}\label{mystringbackup_8c_f1b6719e84687596b7c8c4c9e146bc42}
+
+
+Calculates the length of a string not including the  character. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$s}]input string \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Length of the input string, not including the termination character,  \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{mystringbackup.c@{mystringbackup.c}!mystrncat@{mystrncat}}
+\index{mystrncat@{mystrncat}!mystringbackup.c@{mystringbackup.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mystrncat (char $\ast$ {\em dest}, const char $\ast$ {\em src}, size\_\-t {\em n})}\label{mystringbackup_8c_8ccb44f981aac19c052eb611bc38b197}
+
+
+Appends n characters from string src to the dest sting overwriting the  character at the end of dest, and then add a termination  character. Destination string must have enough space for result. At most, n+1 characters will be written, accounting for the terminator.  $\ast$dest String to append to  $\ast$src String to append onto dest (will not be modified)  n number of bytes to copy \begin{Desc}
+\item[Returns:]Poointer to the destination string \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{mystringbackup.c@{mystringbackup.c}!mystrncpy@{mystrncpy}}
+\index{mystrncpy@{mystrncpy}!mystringbackup.c@{mystringbackup.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mystrncpy (char $\ast$ {\em dest}, const char $\ast$ {\em src}, size\_\-t {\em n})}\label{mystringbackup_8c_f8122b3dfcb26b56ac0505030e95adc5}
+
+
+Copies at most n bytes of the src string into the dest string. Will not null terminate the string if there is no  within the first n bytes. The destination string must be large enough for the source string. If the length of src is less then n, the remainder of dest will be padded with null bytes.  dest The string to copy the string too  src The string to copy \par
+ Number of bytes to copy. \begin{Desc}
+\item[Returns:]A pointer to the desitnation string \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{mystringbackup.c@{mystringbackup.c}!mystrndup@{mystrndup}}
+\index{mystrndup@{mystrndup}!mystringbackup.c@{mystringbackup.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mystrndup (const char $\ast$ {\em s}, size\_\-t {\em n})}\label{mystringbackup_8c_d13d3e42cbb0fb06a9c5070850679f8f}
+
+
+Allocates memory for a string and copies n bytes of the src string into it. If s is longer than n, only n characters are copied and a terminating null byter() is added. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em $\ast$s}]Sting to duplicate \item[{\em n}]Number of bytes to copy \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the new string \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}

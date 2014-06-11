@@ -1,0 +1,107 @@
+Name: Steven Kordell
+Class: CS2303
+Section: C04
+Assignment: 6
+Date Due: 02/25/2013
+
+File List:
+readme.txt
+cptest.c
+cptest2.c
+makefile
+Doxyfile
+
+
+Program descriptions:
+
+cptest:
+This program will copy one file either to the same directory with a different name or to a different directory. It will copy the file in one of three ways specified by the command line options it recieved (See the parameter description below). The program will also print a time stamp taken before and after copying as well as the difference between the time stamps.
+
+cptest2:
+This program does everything cptest can do but with several imporvements.It can copy multiple files to a directory, and the order the command line options are specified in is irrelevent.See the parameter description below. All extra-credit portions of section B were attempted.
+
+
+External Timing results:
+Time to copy ls to ls2:
+Size: 91272
+
+Formatted (method 1):
+real: 0.159s
+user 0.036s
+sys: 0.008s
+
+Raw (method 2):
+real: 0.528s
+user: 0.072s
+sys: 0.367s
+
+(method 3):
+Raw with 512 byte buffer
+real: 0.008s
+user: 0.000s
+sys: 0.000s
+
+Raw with 1024 byte buffer
+real: 0.008s
+user: 0.000s
+sys: 0.000s
+
+Raw with 4096 byte buffer
+real    0m0.042s
+user    0m0.000s
+sys     0m0.000s
+
+Raw with 18384 byte buffer
+real    0m0.070s
+user    0m0.000s
+sys     0m0.000s
+
+conclusions:
+Raw IO takes the longest time to copy files if a buffer is NOT used.Formatted IO is of medium speed. The fastest copy times occur when a buffer is used, but the time depends on the buffer size. A larger buffer does not neccessarily mean a faster copy time, often it results in a longer copy time. This might possibly be due to the time it takes to allocate a larger buffer in memory to hold the data.
+
+Internal Timing results:
+Time to copy ~/public_html/SurfMetLab/Curvature/CIRP/Nose4Feed01ToolSK1-Unfiltered.zip to ./testdir
+Size: 147M
+
+Formatted (method 1):
+15 seconds and 430946 microseconds.
+
+Raw (method 2):
+183 seconds and 51067 microseconds.
+
+(method 3):
+Raw with 512 byte buffer
+10 seconds and 963554 microseconds.
+
+Raw with 1024 byte buffer
+12 seconds and 184501 microseconds.
+
+Raw with 4096 byte buffer
+13 seconds and 236822 microseconds.
+
+Raw with 18384 byte buffer
+11 seconds and 133065 microseconds.
+
+conclusions:
+In this test, an extremely large file (147M) was copied. As before, the raw IO without any sort of buffer takes the longest time to copy, and the raw IO with a buffer is fastest. The formatted IO falles in between. A larger buffer still does not necessarily corolate with faster copy times.
+
+Compilation instructions:
+Unzip the contents of this zip file with the unzip command. Cd to the correct directory and run "make", without quotes. Two  executable files (cptest and cptest2) will be produced.
+Running "make docs", will generate the Doxygen output file and copy the files (with the correct access permissions) to the assig6 folder of the user's public_html directory.
+Running "make clean" will remove all object files and the executables from the directory.
+
+Execution instructions:
+To execute, cd to the correct directory and enter  "./cptest" or "./cptest2"  into the command line, without the quotes, with the parameters as described below.
+
+
+Parameter description for cptest:
+cptest can take 2, 3, or 4 parameters. The first parameter is the path of the file to copy. The second parameter is the path or filename to copy the file to. The third parameter is the copy method to chooos, either 1, 2, or 3. If copy method 3 is chosen, the fourth parameter is the size of the buffer to use when copying.
+Copy method one uses formated file IO to copy the file one character at a time. Compy method two uses raw file IO to copy the file one byte at a time. Copy method three uses raw IO to copy the file, but copies x number of bytes at a time, with x being the buffer size.
+Run example (testdir should be an existing directory in the current directory):
+./cptest /bin/ls testdir 3 2048
+
+Parameter description for cptest2:
+cptest2 can take upwards of two parameters. Two of the parameters must the the input file to copy followed by  the directory or filename to copy the file to. Multiple files can be copied to one output directory. The -c option followed by a value of 1, 2, or 3 specifies the copymethod to use (same as above). The -b option followed by value specifies the buffer size.
+Run example (testdir should be an existing directory in the current directory):
+./cptest2 -b 2048 /bin/* testdir -c 3
+

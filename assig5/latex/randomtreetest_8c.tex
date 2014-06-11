@@ -1,0 +1,50 @@
+\section{randomtreetest.c File Reference}
+\label{randomtreetest_8c}\index{randomtreetest.c@{randomtreetest.c}}
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}tree.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int \bf{gen\-Rand\-Int} (int max\-Value)
+\item 
+char $\ast$ \bf{gen\-Rand\-String} (int n)
+\item 
+int \bf{main} ()
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{randomtreetest.c@{randomtreetest.c}!genRandInt@{genRandInt}}
+\index{genRandInt@{genRandInt}!randomtreetest.c@{randomtreetest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int gen\-Rand\-Int (int {\em max\-Value})}\label{randomtreetest_8c_c4418fa1a8e694adecb1016209595ae1}
+
+
+Generates a random in between 0 and max\-Value, inclusive \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em max\-Value}]The maximum value output \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A random integer between 0 and max\-Value, inclusive \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{randomtreetest.c@{randomtreetest.c}!genRandString@{genRandString}}
+\index{genRandString@{genRandString}!randomtreetest.c@{randomtreetest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ gen\-Rand\-String (int {\em n})}\label{randomtreetest_8c_6d35dbb5801b4a0118ee8fca9413285a}
+
+
+Fills a string of specified size with random alphabetic characters \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em n}]The size to make the string, actul size will be n+1, accounting for the terminator \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pointer to the new string or zero if no memory available \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{randomtreetest.c@{randomtreetest.c}!main@{main}}
+\index{main@{main}!randomtreetest.c@{randomtreetest.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int main ()}\label{randomtreetest_8c_446c6b9a1a4dbab517fbb760870458a3}
+
+

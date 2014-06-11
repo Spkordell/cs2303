@@ -1,0 +1,75 @@
+\section{tree.c File Reference}
+\label{tree_8c}\index{tree.c@{tree.c}}
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include \char`\"{}tree.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\bf{Tnode} $\ast$ \bf{add\_\-tnode} (\bf{Tnode} $\ast$current\_\-tnode, char $\ast$value)
+\item 
+void \bf{traverse\-Descending} (\bf{Tnode} $\ast$current\_\-tnode)
+\item 
+char $\ast$ \bf{convert\-To\-Upper} (char $\ast$str)
+\item 
+void \bf{free\-Tree} (\bf{Tnode} $\ast$current\_\-tnode)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\index{tree.c@{tree.c}!add_tnode@{add\_\-tnode}}
+\index{add_tnode@{add\_\-tnode}!tree.c@{tree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Tnode}$\ast$ add\_\-tnode (\bf{Tnode} $\ast$ {\em current\_\-tnode}, char $\ast$ {\em value})}\label{tree_8c_4bfce116a958985cbce7618d701f8197}
+
+
+Add a Tnode to a Tnode on left child if value is alphabetically before or equal or right child if alphabetically after. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em current\_\-tnode}]The node to attach the new node to.If NULL, will allocate a new Node and return it \item[{\em value}]The value to place in the new node. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pointer to the Tnode or NULL if operation failed \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{tree.c@{tree.c}!convertToUpper@{convertToUpper}}
+\index{convertToUpper@{convertToUpper}!tree.c@{tree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ convert\-To\-Upper (char $\ast$ {\em str})}\label{tree_8c_55598c5fb796fddbe31347850d78d707}
+
+
+Converts a string to all upper case characters \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em str}]Pointer to the c-style string to convert \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pointer to the returned string \end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{tree.c@{tree.c}!freeTree@{freeTree}}
+\index{freeTree@{freeTree}!tree.c@{tree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void free\-Tree (\bf{Tnode} $\ast$ {\em current\_\-tnode})}\label{tree_8c_db65a72a7751fd6dd3b6fe1683a50acf}
+
+
+Frees all the nodes in a tree as well as their contents \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em current\_\-tnode}]The first node to free, all the subnodes will be freed \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}
+\index{tree.c@{tree.c}!traverseDescending@{traverseDescending}}
+\index{traverseDescending@{traverseDescending}!tree.c@{tree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void traverse\-Descending (\bf{Tnode} $\ast$ {\em current\_\-tnode})}\label{tree_8c_344da03e1ee05b6b54d304448974ab41}
+
+
+Recursively traverses the tree \char`\"{}in order\char`\"{} but in reverse, that is, visit the right node, then the current node, then the left node \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em current\_\-tnode}]The tnode to visit recursively \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Author:]Steven Kordell \end{Desc}

@@ -1,0 +1,47 @@
+\section{print\_\-arrays.c File Reference}
+\label{print__arrays_8c}\index{print_arrays.c@{print\_\-arrays.c}}
+{\tt \#include $<$stdio.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void \bf{print\_\-int\_\-array} (int a[$\,$], int num\_\-elements)
+\item 
+void \bf{print\_\-double\_\-array} (double a[$\,$], int num\_\-elements)
+\item 
+int \bf{collect\-Ints} (int a[$\,$], int num\_\-elements, int max\_\-value)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{print_arrays.c@{print\_\-arrays.c}!collectInts@{collectInts}}
+\index{collectInts@{collectInts}!print_arrays.c@{print\_\-arrays.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int collect\-Ints (int {\em a}[$\,$], int {\em num\_\-elements}, int {\em max\_\-value})}\label{print__arrays_8c_3c48583ebe9f34d8bfee8a0f01243a48}
+
+
+Take integer data from the user and store it into an array, stopping when the array gets full or a negative value is entered. It will reject any input values greater than the max value. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a\mbox{[}$\,$\mbox{]}}]The array to store the data in \item[{\em num\_\-elements\mbox{[}$\,$\mbox{]}}]The size of the array \item[{\em max\_\-value}]The maximum valid value of user input \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The number of data elements the user entered \end{Desc}
+\index{print_arrays.c@{print\_\-arrays.c}!print_double_array@{print\_\-double\_\-array}}
+\index{print_double_array@{print\_\-double\_\-array}!print_arrays.c@{print\_\-arrays.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void print\_\-double\_\-array (double {\em a}[$\,$], int {\em num\_\-elements})}\label{print__arrays_8c_68be6bfd57f259fd17fd240c8dfd3594}
+
+
+Print an array of doubles, one per line \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a\mbox{[}$\,$\mbox{]}}]An Array to print \item[{\em num\_\-elements}]The number of elements in the array \end{description}
+\end{Desc}
+\index{print_arrays.c@{print\_\-arrays.c}!print_int_array@{print\_\-int\_\-array}}
+\index{print_int_array@{print\_\-int\_\-array}!print_arrays.c@{print\_\-arrays.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void print\_\-int\_\-array (int {\em a}[$\,$], int {\em num\_\-elements})}\label{print__arrays_8c_425daf4767c614afadb74cfb2b0a7a4f}
+
+
+Print an array of ints, one per line. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em a\mbox{[}$\,$\mbox{]}}]An Array to print \item[{\em num\_\-elements}]Number of elements in the array \end{description}
+\end{Desc}

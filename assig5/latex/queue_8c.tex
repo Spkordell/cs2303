@@ -1,0 +1,80 @@
+\section{queue.c File Reference}
+\label{queue_8c}\index{queue.c@{queue.c}}
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include \char`\"{}queue.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+\bf{Queue} $\ast$ \bf{create\_\-queue} (int max\_\-cells)
+\item 
+int \bf{enqueue} (\bf{Queue} $\ast$which\_\-queue, void $\ast$ptr)
+\item 
+void $\ast$ \bf{dequeue} (\bf{Queue} $\ast$which\_\-queue)
+\item 
+void $\ast$ \bf{front} (\bf{Queue} $\ast$which\_\-queue)
+\item 
+int \bf{delete\_\-queue} (\bf{Queue} $\ast$which\_\-queue)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{queue.c@{queue.c}!create_queue@{create\_\-queue}}
+\index{create_queue@{create\_\-queue}!queue.c@{queue.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\bf{Queue}$\ast$ create\_\-queue (int {\em max\_\-cells})}\label{queue_8c_b710f6637419a761df20688da7ece206}
+
+
+Create a queue by allocating a Queue structure, initializing it, and allocating memory to hold the queue entries. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em max\_\-cells}]Maximum entries in the queue \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pointer to newly-allocated queue structure, NULL if error. \end{Desc}
+\index{queue.c@{queue.c}!delete_queue@{delete\_\-queue}}
+\index{delete_queue@{delete\_\-queue}!queue.c@{queue.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int delete\_\-queue (\bf{Queue} $\ast$ {\em which\_\-queue})}\label{queue_8c_9ae1c24d5e582f72941ff841dcd08f01}
+
+
+Deallocates the queue if it is empty \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em which\_\-queue}]The queue to delete \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:], -1 if the delete fails, 1 otherwise \end{Desc}
+\index{queue.c@{queue.c}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!queue.c@{queue.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ dequeue (\bf{Queue} $\ast$ {\em which\_\-queue})}\label{queue_8c_a150371d99ffab3f34b09efa4669a47b}
+
+
+Removes and returns the pointer at the head of the queue \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em which\_\-queue}]Pointer to queue you want to dequeue \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]head of the queue, NULL if queue is empty. \end{Desc}
+\index{queue.c@{queue.c}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!queue.c@{queue.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int enqueue (\bf{Queue} $\ast$ {\em which\_\-queue}, void $\ast$ {\em ptr})}\label{queue_8c_1d57a1b76a1967de5c006ed78777e65f}
+
+
+Adds a pointer onto the tail of the queue. \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em which\_\-queue}]Pointer to queue you want to enqueue to. \item[{\em ptr}]Pointer to be enqueued. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]0 if successful, -1 if not. \end{Desc}
+\index{queue.c@{queue.c}!front@{front}}
+\index{front@{front}!queue.c@{queue.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ front (\bf{Queue} $\ast$ {\em which\_\-queue})}\label{queue_8c_afbf7ed14373984ccc9fa2f9ac776b7a}
+
+
+Returns the element at the head of the queue without removing it \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em which\_\-queue}]The queue to front \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]the pointer at the front of the queue \end{Desc}
